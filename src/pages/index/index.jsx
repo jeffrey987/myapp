@@ -36,7 +36,7 @@ export default class Index extends Taro.Component {
           value={this.state.value} 
           onChange={this.handleChange.bind(this, 'value')} 
         />
-        <AtButton formType='submit'>提交</AtButton>
+        <AtButton formType='submit'>提交1</AtButton>
         <AtButton formType='reset'>重置</AtButton>
       </AtForm>
     )
