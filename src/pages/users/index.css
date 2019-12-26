@@ -157,3 +157,9 @@ view {
 .bgcolor6 {
     background-color: rgb(42, 81, 53);
 }
+.bgcolor-header{
+    background-color: rgb(239, 238, 180);
+}
+.bgcolor-footer{
+    background-color: rgb(69, 77, 102);
+}

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="header-bar">
+		<view class="header-bar bgcolor-header">
 			<button type="primary" plain="true">添加新的</button>
 		</view>
 		<view class="page-body">
@@ -12,6 +12,7 @@
 				</uni-swipe-action-item>
 			</uni-swipe-action>
 		</view>
+	
 	</view>
 </template>
 
@@ -146,19 +147,7 @@
 					}],
 					content: 'item3'
 				}]
-				// options3: [{
-				// 	text: '置顶'
-				// }, {
-				// 	text: '标记为已读',
-				// 	style: {
-				// 		backgroundColor: 'rgb(254,156,1)'
-				// 	}
-				// }, {
-				// 	text: '删除',
-				// 	style: {
-				// 		backgroundColor: 'rgb(255,58,49)'
-				// 	}
-				// }]
+				,navigateFlag: true
 			}
 		},
 		onReady() {
@@ -237,11 +226,7 @@
 				}
 
 			}
-		},
-		getbgcolor: function (index) {
-			
-		
-	}
+		}
 	}
 </script>
 
