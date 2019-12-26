@@ -1,11 +1,17 @@
 <template>
-	<view>	
-		<uni-section title="swipe-action 列表" type="line"></uni-section>
-		<uni-swipe-action>
-			<uni-swipe-action-item v-for="(item,index) in swipeList" :show="isOpened" :options="item.options" :key="item.id" @change="swipeChange" @click="swipeClick($event,index)">
-				<text class="cont">{{item.content}}</text>
-			</uni-swipe-action-item>
-		</uni-swipe-action>
+	<view>
+		<view class="header-bar">
+			<button type="primary" plain="true">添加新的</button>
+		</view>
+		<view class="page-body">
+			<uni-section title="swipe-action 列表" type="line"></uni-section>
+			<uni-swipe-action>
+				<uni-swipe-action-item v-for="(item,index) in swipeList" :show="isOpened" :options="item.options"
+					:key="item.id" @change="swipeChange" @click="swipeClick($event,index)">
+					<text class="cont " v-bind:class="['bgcolor'+index]">{{item.content}} {{index}}</text>
+				</uni-swipe-action-item>
+			</uni-swipe-action>
+		</view>
 	</view>
 </template>
 
@@ -21,7 +27,8 @@
 		},
 		data() {
 			return {
-				isOpened: false,			
+				title: 'users',
+				isOpened: false,
 				swipeList: [{
 					options: [{
 						text: '添加',
@@ -44,6 +51,86 @@
 					content: 'item2'
 				}, {
 					id: 2,
+					options: [{
+						text: '置顶'
+					}, {
+						text: '标记为已读',
+						style: {
+							backgroundColor: 'rgb(254,156,1)'
+						}
+					}, {
+						text: '删除',
+						style: {
+							backgroundColor: 'rgb(255,58,49)'
+						}
+					}],
+					content: 'item3'
+				}, {
+					id: 3,
+					options: [{
+						text: '置顶'
+					}, {
+						text: '标记为已读',
+						style: {
+							backgroundColor: 'rgb(254,156,1)'
+						}
+					}, {
+						text: '删除',
+						style: {
+							backgroundColor: 'rgb(255,58,49)'
+						}
+					}],
+					content: 'item3'
+				}, {
+					id: 4,
+					options: [{
+						text: '置顶'
+					}, {
+						text: '标记为已读',
+						style: {
+							backgroundColor: 'rgb(254,156,1)'
+						}
+					}, {
+						text: '删除',
+						style: {
+							backgroundColor: 'rgb(255,58,49)'
+						}
+					}],
+					content: 'item3'
+				}, {
+					id: 5,
+					options: [{
+						text: '置顶'
+					}, {
+						text: '标记为已读',
+						style: {
+							backgroundColor: 'rgb(254,156,1)'
+						}
+					}, {
+						text: '删除',
+						style: {
+							backgroundColor: 'rgb(255,58,49)'
+						}
+					}],
+					content: 'item3'
+				}, {
+					id: 6,
+					options: [{
+						text: '置顶'
+					}, {
+						text: '标记为已读',
+						style: {
+							backgroundColor: 'rgb(254,156,1)'
+						}
+					}, {
+						text: '删除',
+						style: {
+							backgroundColor: 'rgb(255,58,49)'
+						}
+					}],
+					content: 'item3'
+				}, {
+					id: 7,
 					options: [{
 						text: '置顶'
 					}, {
@@ -150,10 +237,14 @@
 				}
 
 			}
-		}
+		},
+		getbgcolor: function (index) {
+			
+		
+	}
 	}
 </script>
 
 <style>
-	@import "index.css";	
+	@import "index.css";
 </style>
