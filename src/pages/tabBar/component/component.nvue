@@ -20,6 +20,7 @@
                 </view>
             </view>
         </view>
+		<view>test</view>
     </view>
 </template>
 <script>

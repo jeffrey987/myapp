@@ -3,13 +3,13 @@
 		<view class="header-bar bgcolor-header">
 			<button type="primary" plain="true">添加新的</button>
 		</view>
-		<view class="page-body">
-			<uni-section title="swipe-action 列表" type="line"></uni-section>
+		<view class="page-body">			
 			<uni-swipe-action>
 				<uni-swipe-action-item v-for="(item,index) in swipeList" :show="isOpened" :options="item.options"
 					:key="item.id" @change="swipeChange" @click="swipeClick($event,index)">
-					<text class="cont " v-bind:class="['bgcolor'+index]">{{item.content}} {{index}}</text>
+					<text class="cont " v-bind:class="['bgcolor'+(index>6?6:index)]">{{item.content}}\n{{item.textarea}}</text>
 				</uni-swipe-action-item>
+				
 			</uni-swipe-action>
 		</view>
 	
@@ -20,11 +20,13 @@
 	import uniSection from '@/components/uni-section/uni-section.vue'
 	import uniSwipeAction from '@/components/uni-swipe-action/uni-swipe-action.vue'
 	import uniSwipeActionItem from '@/components/uni-swipe-action-item/uni-swipe-action-item.vue'
+	import uLink from '@/components/uLink.vue'
 	export default {
 		components: {
 			uniSection,
 			uniSwipeAction,
-			uniSwipeActionItem
+			uniSwipeActionItem,
+			uLink
 		},
 		data() {
 			return {
@@ -49,7 +51,8 @@
 							backgroundColor: 'rgb(255,58,49)'
 						}
 					}],
-					content: 'item2'
+					content: 'item2',
+					textarea:'contentteste'
 				}, {
 					id: 2,
 					options: [{
@@ -65,7 +68,7 @@
 							backgroundColor: 'rgb(255,58,49)'
 						}
 					}],
-					content: 'item3'
+					content: 'item3fadsfhasjdsafsadfsafasfdasdfdsafsdfsafsdfasdjfsanjfkslj'
 				}, {
 					id: 3,
 					options: [{
@@ -146,8 +149,42 @@
 						}
 					}],
 					content: 'item3'
-				}]
-				,navigateFlag: true
+				}
+				, {
+					id: 8,
+					options: [{
+						text: '置顶'
+					}, {
+						text: '标记为已读',
+						style: {
+							backgroundColor: 'rgb(254,156,1)'
+						}
+					}, {
+						text: '删除',
+						style: {
+							backgroundColor: 'rgb(255,58,49)'
+						}
+					}],
+					content: 'item3'
+				}, {
+					id: 9,
+					options: [{
+						text: '置顶'
+					}, {
+						text: '标记为已读',
+						style: {
+							backgroundColor: 'rgb(254,156,1)'
+						}
+					}, {
+						text: '删除',
+						style: {
+							backgroundColor: 'rgb(255,58,49)'
+						}
+					}],
+					content: 'item3'
+				}
+				]
+				,navigateFlag: false
 			}
 		},
 		onReady() {
